@@ -36,7 +36,7 @@ jobs:
       - name: Build static site
         run: |
           export PATH="$PATH:$HOME/.pub-cache/bin"
-          jaspr build
+          BASE_HREF=/portfolio/ jaspr build
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5

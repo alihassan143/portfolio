@@ -1,5 +1,7 @@
 library;
 
+import 'dart:io';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
@@ -9,9 +11,11 @@ import 'main.server.options.dart';
 void main() {
   Jaspr.initializeApp(options: defaultServerOptions);
 
+  final base = Platform.environment['BASE_HREF'] ?? '/';
+
   runApp(Document(
     title: 'Ali Hassan — Senior Flutter Developer & Team Lead',
-    base: '/portfolio/',
+    base: base,
     head: [
       meta(
         name: 'description',
