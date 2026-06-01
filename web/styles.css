@@ -392,26 +392,23 @@ body {
 ══════════════════════════════════════════ */
 .about-bg {
   position: relative;
-  overflow: hidden;
   background: linear-gradient(180deg, transparent, rgba(124,58,237,.04) 50%, transparent);
 }
 
 /* Globe canvas background */
 .globe-wrap {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
 }
 #globe-canvas {
-  width: 560px;
-  height: 560px;
-  opacity: 0.55;
-  margin-right: -60px;
+  display: block;
+  width: 520px;
+  height: 520px;
+  opacity: 0.6;
 }
 .about-bg .sec-wrap { position: relative; z-index: 1; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }

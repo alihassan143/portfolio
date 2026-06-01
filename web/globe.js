@@ -12,9 +12,10 @@
 
   /* ── Sizing ─────────────────────────────────────────── */
   function resize() {
-    var box = canvas.parentElement.getBoundingClientRect();
-    W = canvas.width  = box.width  || 480;
-    H = canvas.height = box.height || 480;
+    // Read the canvas's own CSS display size so buffer matches display exactly.
+    var size = 520;
+    W = canvas.width  = size;
+    H = canvas.height = size;
     cx = W / 2; cy = H / 2;
     radius = Math.min(W, H) * 0.42;
     init();

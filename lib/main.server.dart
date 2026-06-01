@@ -11,6 +11,7 @@ void main() {
 
   runApp(Document(
     title: 'Ali Hassan — Senior Flutter Developer & Team Lead',
+    base: '/portfolio/',
     head: [
       meta(
         name: 'description',
