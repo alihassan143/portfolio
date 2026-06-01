@@ -8,151 +8,95 @@ class ProjectsSection extends StatelessComponent {
   Component build(BuildContext context) {
     return div(classes: 'projects-bg', [
       div(id: 'projects', classes: 'sec-wrap', [
-        div(classes: 'sec-header', [
-          span(classes: 'sec-tag', [text('Open Source')]),
-          h2(classes: 'sec-title', [text('Featured Projects')]),
+        div(classes: 'sec-header', attributes: {'data-reveal': ''}, [
+          span(classes: 'sec-tag', [.text('Open Source')]),
+          h2(classes: 'sec-title', [.text('Featured Projects')]),
           p(classes: 'sec-sub', [
-            text(
+            .text(
               'Original packages and apps I\'ve authored and maintain '
               'on GitHub and pub.dev.',
             ),
           ]),
         ]),
         div(classes: 'projects-grid', [
-          _project(
-            icon: '📄',
-            name: 'flutter-packages',
-            featured: true,
-            desc:
-                'Html-to-PDF converter for Flutter — render any HTML/CSS '
-                'content to a PDF file on all platforms. The most starred '
-                'package in my portfolio.',
-            stars: '27',
-            forks: '43',
-            lang: 'Dart',
-            langClass: 'l-dart',
-            url: 'https://github.com/alihassan143/flutter-packages',
+          _card(
+            icon: '📄', name: 'flutter-packages', featured: true,
+            desc: 'Html-to-PDF converter for Flutter — render any HTML/CSS '
+                'content to a PDF file on all platforms. Most starred package.',
+            stars: '27', forks: '43', lang: 'Dart', lc: 'l-dart',
+            url: 'https://github.com/alihassan143/flutter-packages', stagger: '',
           ),
-          _project(
-            icon: '🖼️',
-            name: 'backgroundremover',
-            desc:
-                'A Flutter plugin to remove image backgrounds on-device, '
-                'supporting Android, iOS, macOS and more. Pure Dart/Flutter '
-                'implementation.',
-            stars: '6',
-            forks: '6',
-            lang: 'Dart',
-            langClass: 'l-dart',
-            url: 'https://github.com/alihassan143/backgroundremover',
+          _card(
+            icon: '🖼️', name: 'backgroundremover',
+            desc: 'A Flutter plugin to remove image backgrounds on-device. '
+                'Pure Dart/Flutter implementation, supports all major platforms.',
+            stars: '6', forks: '6', lang: 'Dart', lc: 'l-dart',
+            url: 'https://github.com/alihassan143/backgroundremover', stagger: 'sd-1',
           ),
-          _project(
-            icon: '📝',
-            name: 'docx_viewer',
-            desc:
-                'A Flutter package for rendering DOCX files directly inside '
-                'your app — no server required. Available on pub.dev with '
-                'dedicated API and example.',
-            stars: '5',
-            forks: '5',
-            lang: 'Dart',
-            langClass: 'l-dart',
-            url: 'https://github.com/alihassan143/docx_viewer',
+          _card(
+            icon: '📝', name: 'docx_viewer',
+            desc: 'Flutter package for rendering DOCX files inside your app. '
+                'No server required. Available on pub.dev with full API docs.',
+            stars: '5', forks: '5', lang: 'Dart', lc: 'l-dart',
+            url: 'https://github.com/alihassan143/docx_viewer', stagger: 'sd-2',
           ),
-          _project(
-            icon: '🖥️',
-            name: 'Screenstate',
-            desc:
-                'A Flutter desktop plugin that detects and monitors the '
-                'screen power state (on/off/sleep/wake) on macOS and '
-                'Windows using native C++ APIs.',
-            stars: '0',
-            forks: '2',
-            lang: 'C++',
-            langClass: 'l-cpp',
-            url: 'https://github.com/alihassan143/Screenstate',
+          _card(
+            icon: '🖥️', name: 'Screenstate',
+            desc: 'Flutter desktop plugin that detects and monitors the screen '
+                'power state (on/off/sleep/wake) on macOS and Windows via native C++.',
+            stars: '0', forks: '2', lang: 'C++', lc: 'l-cpp',
+            url: 'https://github.com/alihassan143/Screenstate', stagger: 'sd-3',
           ),
-          _project(
-            icon: '🎨',
-            name: 'canvas_app',
-            desc:
-                'A high-performance Flutter desktop drawing application '
-                'built with a custom canvas engine. Supports freehand '
-                'drawing, shapes, and export.',
-            stars: '1',
-            forks: '0',
-            lang: 'C++',
-            langClass: 'l-cpp',
-            url: 'https://github.com/alihassan143/canvas_app',
+          _card(
+            icon: '🎨', name: 'canvas_app',
+            desc: 'High-performance Flutter desktop drawing app built with '
+                'a custom canvas engine. Freehand drawing, shapes, and export.',
+            stars: '1', forks: '0', lang: 'C++', lc: 'l-cpp',
+            url: 'https://github.com/alihassan143/canvas_app', stagger: 'sd-4',
           ),
-          _project(
-            icon: '🗄️',
-            name: 'dart_alfred_postgress',
-            desc:
-                'A full-stack Dart backend template combining the Alfred '
-                'HTTP server framework with a PostgreSQL database — '
-                'demonstrating Dart on the server side.',
-            stars: '0',
-            forks: '0',
-            lang: 'Dart',
-            langClass: 'l-dart',
-            url: 'https://github.com/alihassan143/dart_alfred_postgress',
+          _card(
+            icon: '🗄️', name: 'dart_alfred_postgress',
+            desc: 'Full-stack Dart backend template combining Alfred HTTP '
+                'server with PostgreSQL — demonstrating Dart on the server side.',
+            stars: '0', forks: '0', lang: 'Dart', lc: 'l-dart',
+            url: 'https://github.com/alihassan143/dart_alfred_postgress', stagger: 'sd-5',
           ),
-          _project(
-            icon: '🔐',
-            name: 'gorouter_riverpod_auth',
-            desc:
-                'Production-ready Flutter authentication boilerplate using '
-                'GoRouter for navigation and Riverpod for state management. '
-                'A reference architecture.',
-            stars: '0',
-            forks: '0',
-            lang: 'Dart',
-            langClass: 'l-dart',
-            url: 'https://github.com/alihassan143/gorouter_riverpod_auth',
+          _card(
+            icon: '🔐', name: 'gorouter_riverpod_auth',
+            desc: 'Production-ready Flutter auth boilerplate using GoRouter '
+                'for navigation and Riverpod for state management. Reference arch.',
+            stars: '0', forks: '0', lang: 'Dart', lc: 'l-dart',
+            url: 'https://github.com/alihassan143/gorouter_riverpod_auth', stagger: 'sd-6',
           ),
-          _project(
-            icon: '✂️',
-            name: 'imagecropper',
-            desc:
-                'A Flutter image-cropping widget with intuitive gesture '
-                'controls — crop, rotate, and flip images natively across '
-                'Android, iOS, and desktop.',
-            stars: '0',
-            forks: '0',
-            lang: 'Dart',
-            langClass: 'l-dart',
-            url: 'https://github.com/alihassan143/imagecropper',
+          _card(
+            icon: '✂️', name: 'imagecropper',
+            desc: 'Flutter image-cropping widget with intuitive gesture '
+                'controls. Crop, rotate, and flip images natively across all platforms.',
+            stars: '0', forks: '0', lang: 'Dart', lc: 'l-dart',
+            url: 'https://github.com/alihassan143/imagecropper', stagger: 'sd-7',
           ),
-          _project(
-            icon: '💤',
-            name: 'window_sleep_detector',
-            desc:
-                'Flutter desktop plugin that detects system sleep and wake '
-                'events on Windows and macOS. Useful for apps that need to '
-                'pause/resume on idle.',
-            stars: '0',
-            forks: '0',
-            lang: 'C++',
-            langClass: 'l-cpp',
-            url: 'https://github.com/alihassan143/window_sleep_detector',
+          _card(
+            icon: '💤', name: 'window_sleep_detector',
+            desc: 'Flutter desktop plugin detecting system sleep and wake '
+                'events on Windows and macOS. Pause/resume apps on idle.',
+            stars: '0', forks: '0', lang: 'C++', lc: 'l-cpp',
+            url: 'https://github.com/alihassan143/window_sleep_detector', stagger: 'sd-8',
           ),
         ]),
 
-        // View all link
-        div(classes: 'view-all-wrap', [
+        div(classes: 'view-all-wrap', attributes: {'data-reveal': ''}, [
           a(
             href: 'https://github.com/alihassan143?tab=repositories',
             classes: 'btn btn-outline',
             attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-            [text('View All 110+ Repositories →')],
+            [.text('View All 110+ Repositories →')],
           ),
         ]),
       ]),
     ]);
   }
 
-  Component _project({
+  Component _card({
     required String icon,
     required String name,
     bool featured = false,
@@ -160,39 +104,36 @@ class ProjectsSection extends StatelessComponent {
     required String stars,
     required String forks,
     required String lang,
-    required String langClass,
+    required String lc,
     required String url,
+    required String stagger,
   }) {
-    return div(classes: 'pcard', [
-      // Top row
+    return div(classes: 'pcard $stagger', attributes: {'data-reveal': ''}, [
       div(classes: 'pc-top', [
-        div(classes: 'pc-icon', [text(icon)]),
-        if (featured) span(classes: 'pc-badge', [text('⭐ Most Starred')]),
+        div(classes: 'pc-icon', [.text(icon)]),
+        if (featured) span(classes: 'pc-badge', [.text('⭐ Most Starred')]),
       ]),
-      // Name
       a(
         href: url,
         classes: 'pc-name',
         attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-        [text(name)],
+        [.text(name)],
       ),
-      // Description
-      p(classes: 'pc-desc', [text(desc)]),
-      // Footer
+      p(classes: 'pc-desc', [.text(desc)]),
       div(classes: 'pc-foot', [
         div(classes: 'pc-meta', [
-          span(classes: 'pc-stat', [text('★ $stars')]),
-          span(classes: 'pc-stat', [text('⑂ $forks')]),
+          span(classes: 'pc-stat', [.text('★ $stars')]),
+          span(classes: 'pc-stat', [.text('⑂ $forks')]),
           span(classes: 'pc-lang', [
-            span(classes: 'ldot $langClass', []),
-            text(lang),
+            span(classes: 'ldot $lc', []),
+            .text(lang),
           ]),
         ]),
         a(
           href: url,
           classes: 'pc-link',
           attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-          [text('View →')],
+          [.text('View →')],
         ),
       ]),
     ]);

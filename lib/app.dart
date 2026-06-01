@@ -24,15 +24,15 @@ class App extends StatelessComponent {
       ]),
       footer(classes: 'footer', [
         p([
-          text('Crafted with '),
-          span(classes: 'gradient-text', [text('Jaspr & Dart')]),
-          text(' by '),
+          .text('Crafted with '),
+          span(classes: 'gradient-text', [.text('Jaspr & Dart')]),
+          .text(' by '),
           a(
             href: 'https://github.com/alihassan143',
             attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-            [text('Ali Hassan')],
+            [.text('Ali Hassan')],
           ),
-          text(' · Senior Flutter Developer'),
+          .text(' · Senior Flutter Developer'),
         ]),
       ]),
     ]);
