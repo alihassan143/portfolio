@@ -15,6 +15,9 @@ class HeroSection extends StatelessComponent {
       ]),
       div(classes: 'hero-grid-lines', []),
 
+      // Globe canvas — centred behind avatar + title
+      RawText('<canvas id="hero-globe-canvas"></canvas>'),
+
       div(classes: 'hero-inner', [
         // Available badge
         div(classes: 'hero-badge', [

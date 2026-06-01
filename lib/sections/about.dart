@@ -8,7 +8,7 @@ class AboutSection extends StatelessComponent {
   Component build(BuildContext context) {
     return div(classes: 'about-bg', [
       div(classes: 'globe-wrap', [
-        RawText('<canvas id="globe-canvas"></canvas>'),
+        RawText('<canvas id="about-globe-canvas"></canvas>'),
       ]),
       div(id: 'about', classes: 'sec-wrap', [
         div(classes: 'sec-header', attributes: {'data-reveal': ''}, [
